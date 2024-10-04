@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title>Deyton Pierce</title>
+	<!-- Favicon -->
+	<link href={{info.web_pic}} rel="shortcut icon">
+	<!-- CSS -->
+	<link rel="stylesheet" href="/static/plugins/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/plugins/magnific-popup/magnific-popup.min.css">
+	<link rel="stylesheet" href="/static/plugins/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/static/css/theme.css">
+	<!-- Fonts/Icons -->
+	<link rel="stylesheet" href="/static/plugins/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" href="/static/plugins/fontawesome/css/all.css">
+</head>
+
+<body data-preloader="true">
+
+	<!-- Cursor -->
+	<div id="cursor"></div>
+	<!-- end Cursor -->
+
+	<!-- Header -->
+	<div class="header">
+		<div class="container-fluid">
+			<div class="header-wrapper">
+				<!-- Header Logo -->
+				<div class="header-logo">
+					<h2><a href="/">Deyton Pierce</a></h2>
+				</div>
+				<!-- Header Nav -->
+				<div class="header-nav">
+					<a class="button button-sm button-dot me-2 me-lg-3" href="/#contact">
+						<span data-text="Let's Talk">Let's Talk</span>
+					</a>
+					<!-- Nav Menu Toggle -->
+					<button id="nav-toggle" class="button button-sm button-dot button-white">
+						<span data-text="Menu">Menu</span>
+					</button>
+					<!-- Nav Menu Box -->
+					<div class="nav-box">
+						<ul class="nav">
+							<li class="nav-item">
+								<a class="nav-link" href="/#about"><i class="bi bi-arrow-right"></i>About</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/#services"><i class="bi bi-arrow-right"></i>Services</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/#portfolio"><i class="bi bi-arrow-right"></i>Portfolio</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/#education"><i class="bi bi-arrow-right"></i>Education</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/#contact"><i class="bi bi-arrow-right"></i>Contact</a>
+							</li>
+						</ul>
+					</div>
+				</div><!-- end header-nav -->
+			</div><!-- end header-wrapper -->
+		</div><!-- end container -->
+	</div>
+	<!-- end Header -->
+
+	<main>
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+						<h1 class="display-3 fw-medium"> <span class="text-gradient">{{project.name}}</span></h1>
+						<p>{{project.description}}</p>
+					</div>
+				</div><!-- end row -->
+				<div class="row g-4 mt-5">
+					<div class="col-12 col-md-6 col-lg-3">
+						<div class="fancy-box">
+							<h6 class="sm-heading mb-1">Languages:</h6>
+							<ul class="list-inline-dot">
+								<li>{{project.languages}}</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<div class="fancy-box">
+							<h6 class="sm-heading mb-1">Deployment:</h6>
+							<ul class="list-inline-dot">
+								<li>{{project.deployment}}</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<div class="fancy-box">
+							<h6 class="sm-heading mb-1">Source Code:</h6>
+							<a class="link-hover" href={{project.sourcecode_link}}>
+								<span data-text="{{project.sourcecode}}">{{project.sourcecode}}</span>
+							</a>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<div class="fancy-box">
+							<h6 class="sm-heading mb-1">Project link:</h6>
+							<a class="link-hover" href={{project.website_link}}>
+								<span data-text="{{project.website}}">{{project.website}}</span>
+							</a>
+						</div>
+					</div>
+				</div><!-- end row -->
+			</div><!-- end container -->
+		</div>
+
+		<div class="section-box">
+			<div class="section-sm bg-dark border-radius-1">
+				<div class="container">
+					<!-- Project Media -->
+					<div class="row g-4 g-lg-5 mt-1">
+						<div class="col-12">
+							<img class="border-radius" src={{project.main_pic}} alt="">
+						</div>
+					</div><!-- end row -->
+					<div class="row mt-5">
+						<div class="col-6 text-start">
+							{% if project.id != 1 %}
+							<a class="button" href="{{ project.id-1 }}"> 
+								<span data-text="Previous Project">Previous Project</span>
+							</a>
+							{% endif %}
+						</div>
+						<div class="col-6 text-end">
+							{% if has_next_project %}
+							<a class="button" href="{{ project.id+1 }}"> 
+								<span data-text="Next Project">Next Project</span>
+							</a>
+							{% endif %}
+						</div>
+					</div>
+				</div><!-- end container -->
+			</div>
+		</div>
+
+	</main>
+
+	<!-- Footer -->
+	<div class="py-4 py-lg-5 text-center">
+		<p>{{info.all_rights_reserved}}</p>
+	</div>
+	<!-- end Footer -->
+
+	<!-- Scroll To Top -->
+	<div class="scrolltotop">
+		<a class="button-circle" href="#">
+			<i class="bi bi-arrow-up"></i>
+			<i class="bi bi-arrow-up"></i>
+		</a>
+	</div>
+	<!-- end Scroll To Top -->
+
+	<!-- JavaScripts -->
+	<script src="/static/plugins/jquery.min.js"></script>
+	<script src="/static/plugins/plugins.js"></script>
+	<script src="/static/js/functions.js"></script>
+</body>
+
+</html>
